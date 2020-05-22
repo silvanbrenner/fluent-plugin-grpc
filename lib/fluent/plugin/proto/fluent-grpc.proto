@@ -11,9 +11,10 @@ service Logging {
 }
 
 message LogRequest {
-  string message = 1;
+  string tag = 1;
+  string message = 2;
 }
 
 message LogResponse {
-  string message = 1;
+  // empty
 }

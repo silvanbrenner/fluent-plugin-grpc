@@ -4,11 +4,11 @@ this_dir = File.expand_path(File.dirname(__FILE__))
 $LOAD_PATH.unshift(this_dir) unless $LOAD_PATH.include?(this_dir)
 
 require 'grpc'
-require 'fluent-input_services_pb'
+require 'fluent-grpc_services_pb'
 
 def main
-  stub = Fluentinput::Logging::Stub.new('localhost:50051', :this_channel_is_insecure)
-  message = stub.send_log(Fluentinput::LogRequest.new(message: "Hello World"))
+  stub = Fluent::Grpc::Logging::Stub.new('localhost:50051', :this_channel_is_insecure)
+  message = stub.send_log(Fluent::Grpc::LogRequest.new(tag: "my.app", message: "Hello World"))
   p "LogResponse: #{message}"
 end
 

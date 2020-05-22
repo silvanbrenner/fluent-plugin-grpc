@@ -13,7 +13,7 @@ $ gem install fluent-plugin-grpcnew
 
 Add following line to your Gemfile:
 
-```ruby
+```rub
 gem "fluent-plugin-grpcnew"
 ```
 
@@ -35,26 +35,43 @@ $ fluent-plugin-config-format input grpcnew
 
 ## Build
 
-gem build fluent-plugin-grpcnew.gemspec
-
+```
+$ gem build fluent-plugin-grpcnew.gemspec
+```
 
 ## Setup gRCP
 
-gem install grpc
+```
+$ gem install grpc
+```
 
-gem install grpc-tools
+```
+$ gem install grpc-tools
+```
 
-grpc_tools_ruby_protoc -I lib/fluent/plugin/proto --ruby_out=lib/fluent/plugin --grpc_out=lib/fluent/plugin lib/fluent/plugin/proto/fluent-input.proto
+```
+$ grpc_tools_ruby_protoc -I lib/fluent/plugin/proto --ruby_out=lib/fluent/plugin --grpc_out=lib/fluent/plugin lib/fluent/plugin/proto/fluent-grpc.proto
+```
 
 ## Setup fluentd
 
-gem install fluentd
+```
+$ gem install fluentd
+```
 
 ### Starting and testing fluentd
 
-fluentd -c conf/fluentd.conf -vv
+```
+$ fluentd -c conf/fluentd.conf -vv
+```
 
-curl --header "Content-Type: application/json" --request POST --data "{\"json\":\"message\"}" http://localhost:9880
+```
+$ curl --header "Content-Type: application/json" --request POST --data "{\"json\":\"message\"}" http://localhost:9880
+```
+
+```
+$ ruby demo_client.rb
+```
 
 ## Copyright
 
