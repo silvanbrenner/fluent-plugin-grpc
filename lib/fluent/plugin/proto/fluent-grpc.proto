@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.silvanbrenner.fluent.input.grpc.api";
+option java_outer_classname = "FluentInputProto";
+
+package fluent.grpc;
+
+service Logging {
+  rpc sendLog (LogRequest) returns (LogResponse) {}
+}
+
+message LogRequest {
+  string message = 1;
+}
+
+message LogResponse {
+  string message = 1;
+}
