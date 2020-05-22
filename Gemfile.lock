@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fluent-plugin-grpcnew (0.1.0)
+    fluent-plugin-grpc-2 (0.1.0)
       fluentd (>= 0.14.10, < 2)
       grpc (~> 1.28)
 
@@ -69,7 +69,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.14)
-  fluent-plugin-grpcnew!
+  fluent-plugin-grpc-2!
   rake (~> 12.0)
   test-unit (~> 3.0)
 

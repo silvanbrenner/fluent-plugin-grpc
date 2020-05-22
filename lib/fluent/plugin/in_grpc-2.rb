@@ -23,7 +23,7 @@ require 'fluent-grpc_services_pb'
 module Fluent
   module Plugin
     class GrpcInput < Fluent::Plugin::Input
-      Fluent::Plugin.register_input("grpcnew", self)
+      Fluent::Plugin.register_input("grpc-2", self)
 
       helpers :thread
 
@@ -59,7 +59,7 @@ module Fluent
 
       def start
         super
-        log.info "Starting grpcnew input plugin"
+        log.info "Starting grpc input plugin"
         @server = GRPC::RpcServer.new
         @server.add_http2_port("#{@bind}:#{@port}", :this_port_is_insecure)
         @server.handle(LoggingServer.new(router))
@@ -69,7 +69,7 @@ module Fluent
       end
 
       def shutdown
-        log.info "Shutdown grpcnew input plugin"
+        log.info "Shutdown grpc input plugin"
         @server.stop
         super
       end

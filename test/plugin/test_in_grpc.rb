@@ -1,5 +1,5 @@
 require "helper"
-require "fluent/plugin/in_grpcnew.rb"
+require "fluent/plugin/in_grpc-2.rb"
 
 class GrpcInputTest < Test::Unit::TestCase
   setup do

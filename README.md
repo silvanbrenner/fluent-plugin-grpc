@@ -6,7 +6,7 @@ Fluent input plugin for gRPC
 ### RubyGems
 
 ```
-$ gem install fluent-plugin-grpcnew
+$ gem install fluent-plugin-grpc-2
 ```
 
 ### Bundler
@@ -14,7 +14,7 @@ $ gem install fluent-plugin-grpcnew
 Add following line to your Gemfile:
 
 ```rub
-gem "fluent-plugin-grpcnew"
+gem "fluent-plugin-grpc-2"
 ```
 
 And then execute:
@@ -28,7 +28,7 @@ $ bundle
 You can generate configuration template:
 
 ```
-$ fluent-plugin-config-format input grpcnew
+$ fluent-plugin-config-format input grpc-2
 ```
 
 # Development
@@ -36,7 +36,7 @@ $ fluent-plugin-config-format input grpcnew
 ## Build
 
 ```
-$ gem build fluent-plugin-grpcnew.gemspec
+$ gem build fluent-plugin-grpc.gemspec
 ```
 
 ## Setup gRCP
